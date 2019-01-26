@@ -1,0 +1,53 @@
+<!DOCTYPE htm>
+<head>
+<title>box shadows</title>
+<style>
+/*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+body{
+	background:#ccc;
+}
+.box h3{
+  text-align:center;
+    position:relative;
+    top:80px;
+}
+.box {
+    width:70%;
+    height:200px;
+    background:#FFF;
+    margin:40px auto;
+}
+.one{
+    box-shadow: 0 10px 6px -6px black;
+}
+.two{
+	position: relative;
+}
+.two:before, .two:after{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+.two:after{
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+</style>
+</head>
+<body>
+<div class="box one">
+<h3>box1</h3>
+</div>
+<div class="box two">
+<h3>box2</h3>
+</div>
+</body>
+</html>
