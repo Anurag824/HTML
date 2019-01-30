@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+div{
+	margin: 0 auto;
+	text-align: center;
+	background: rgba(125,25,205,.5);
+	height: 300px;
+	width: 350px;
+	font-family: 'Londrina Shadow', cursive;
+	border-radius: 40px;
+}
+h1{
+	position: relative;
+	top: 20px;
+	font-size: 50px;
+	color:red;
+}
+input{
+	float: right;
+	position: relative;
+	left:-30px;
+	top:5px;
+	height:20px;
+}
+#btn{
+	height:40px;
+	width:130px;
+	position: relative;
+	border-radius: 9px;
+	box-shadow: 0px 5px 60px -1px cyan;
+	left:-100px;
+}
+h2{
+	color:white;
+	font-size: 30px;
+}
+</style>
+</head>
+<body>
+<div>
+<h1>Form Validation</h1>
+<form onsubmit="return valid()">
+<h2>Name :
+<input type="text" placeholder="name" id="a" required><br>
+Email :
+<input type="email" placeholder="email" id="b" required><br>
+Mobile :
+<input type="number" placeholder="number" id="c" required></h2>
+<!-- <input type="reset" name="reset" class="btn"> -->
+<input type="submit" value="submit" name="submit" id="btn">
+</form>
+</div>
+<script>
+function valid(){
+var a1=document.getElementById("a").value;
+var a2=document.getElementById("b").value;
+var a3=document.getElementById("c").value;
+	if(a1=="")
+		window.alert("please fill your name!");
+	else if(a1.length<=2)
+		window.alert("invalid name!");
+	if(number.length<=9)
+		window.alert("invalid mobile number!");
+	else
+		window.alert("Thank You! Your response has been submitted!");
+}
+</script>
+</body>
+</html>
