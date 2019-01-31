@@ -42,15 +42,15 @@ h2{
 <body>
 <div>
 <h1>Form Validation</h1>
-<form onsubmit="return valid()">
+<form>
 <h2>Name :
-<input type="text" placeholder="name" id="a" required><br>
+<input type="text" placeholder="name" id="a"><br>
 Email :
-<input type="email" placeholder="email" id="b" required><br>
+<input type="email" placeholder="email" id="b"><br>
 Mobile :
-<input type="number" placeholder="number" id="c" required></h2>
+<input type="number" placeholder="number" id="c"></h2>
 <!-- <input type="reset" name="reset" class="btn"> -->
-<input type="submit" value="submit" name="submit" id="btn">
+<input type="submit" value="submit" name="submit" id="btn" action="#" onclick="valid()">
 </form>
 </div>
 <script>
@@ -58,14 +58,39 @@ function valid(){
 var a1=document.getElementById("a").value;
 var a2=document.getElementById("b").value;
 var a3=document.getElementById("c").value;
+var val=0;
 	if(a1=="")
-		window.alert("please fill your name!");
+	{
+		alert("please fill your name!");
+		val++;
+	}
 	else if(a1.length<=2)
-		window.alert("invalid name!");
-	if(number.length<=9)
-		window.alert("invalid mobile number!");
-	else
-		window.alert("Thank You! Your response has been submitted!");
+	{
+		alert("invalid name!");
+		val++;
+	}
+	else if(a2.indexOf('@')<=0)
+	{
+		alert("invalid email missing @ !");
+		val++;
+	}
+	else if(a2.lastIndexOf('.')<(a2.indexOf('@')+4))
+	{
+		alert("invalid email missing . !");
+		val++;
+	}
+	else if((a2.charAt(a2.length-4)!='.')&&(a2.charAt(a2.length-3)!='.'))
+	{
+		alert("invalid email missing . !");
+		val++;
+	}
+	else if(a3.length<=9)
+	{
+		alert("invalid mobile number!");
+		val++;
+	}
+	if(val==0)
+		alert("Thank You! Your response has been submitted!");
 }
 </script>
 </body>
