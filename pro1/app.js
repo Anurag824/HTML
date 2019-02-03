@@ -5,7 +5,6 @@ btns.forEach(function(btn){
 	li.parentNode.removeChild(li);
 	});
 });
-
 /*
 arrays
 
