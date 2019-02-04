@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link href="style.css" rel="stylesheet"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 		<title>Working with JavaScript DOM</title>
 	</head>
 	<body>
@@ -37,7 +37,7 @@
 					</li>
 				</ul>
 			</div>
-			<form id="add-movie">
+			<form id="add-movie" action="#" onsubmit="return add()">
 				<input type="checkbox" id="hide"/>
 				<label for="hide">Hide the List</label>
 				<input type="text" placeholder="Add a movie..."/>
