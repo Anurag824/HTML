@@ -1,3 +1,4 @@
+/*
 var btns=document.querySelectorAll('#movie-list .delete');
 	btns.forEach(function(btn){
 	btn.addEventListener('click', function(e){
@@ -5,6 +6,18 @@ var btns=document.querySelectorAll('#movie-list .delete');
 	li.parentNode.removeChild(li);
 	});
 	});
+*/
+var list = document.querySelector('#movie-list ul');
+ list.addEventListener('click', function(e){
+ if(e.target.className === 'delete'){          // We want to get where did the click happened, so className
+    console.log(e.target);
+     const li = e.target.parentElement;         // this is the li which is the parent to the delete and we want to delete it.
+     //console.log(li);
+    li.parentNode.removeChild(li);
+     list.removeChild(li);
+ }
+ })
+/*
 function add(){
 	var a=document.querySelectorAll('#add-movie input');
 	var node=document.createElement("li");
@@ -28,6 +41,31 @@ function add(){
 	});
 	});
 }
+*/
+//var list=document.querySelector('#movie-list ul')
+const addForm=document.forms['add-movie'];
+addForm.addEventListener('submit', function(e){
+	e.preventDefault();
+	const value=addForm.querySelector('input[type="text"]').value;
+	const li=document.createElement('li');
+	const movieName=document.createElement('span');
+	const deleteBtn=document.createElement('span');
+	li.appendChild(movieName);
+	li.appendChild(deleteBtn);
+	list.appendChild(li);
+	deleteBtn.textContent='delete';
+	movieName.textContent=value;
+	movieName.classList.add('name');
+	deleteBtn.classList.add('delete');
+})
+var val=document.getElementById('hide').checked;
+val.addEventListener('click', function(e){
+	var x = document.getElementsByTagName("ul");
+  	if(val==true)
+   		x.style.display = "none"; // or x.style.visibility = "hidden";
+  	else
+   		x.style.display = "block"; // or x.style.visibility = "visible";
+})
 /*
 function add(){
 	var a=document.querySelectorAll('#add-movie input');
@@ -94,4 +132,9 @@ list.addEventListener('click', funtion(e){
 		list.removeChild(li);
 	}
 })
+
+addForm=document.forms['add-movie'];
+document.forms
+addForm=document.forms['search-movies'];
+document.forms[''];
 */
