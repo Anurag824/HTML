@@ -58,14 +58,41 @@ addForm.addEventListener('submit', function(e){
 	movieName.classList.add('name');
 	deleteBtn.classList.add('delete');
 })
+var mlist=document.querySelector('ul');
+function hid(){
+      if (mlist.style.display == "") {
+          mlist.style.display = "none";
+      } 
+      else{
+          mlist.style.display = "";
+      }
+  }
+
+  function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementsByTagName("input")[0];
+    filter = input.value.toUpperCase();
+    ul = document.getElementsByTagName("ul");
+    li = document.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByClassName("name")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+/*
 var val=document.getElementById('hide').checked;
-val.addEventListener('click', function(e){
-	var x = document.getElementsByTagName("ul");
+function hid(){
+	var x = document.getElementsByTagName("ul").children[0];
   	if(val==true)
    		x.style.display = "none"; // or x.style.visibility = "hidden";
   	else
    		x.style.display = "block"; // or x.style.visibility = "visible";
-})
+}
 /*
 function add(){
 	var a=document.querySelectorAll('#add-movie input');

@@ -12,7 +12,7 @@
 					<h1 class="title">Moviemania</h1>
 					<p>Movies for everyone</p>
 					<form id="search-movies">
-						<input type="text" placeholder="Search movies..."/>
+						<input type="text" placeholder="Search movies..." onkeyup="search()" />
 					</form>
 				</div>
 			</header>
@@ -37,8 +37,8 @@
 					</li>
 				</ul>
 			</div>
-			<form id="add-movie" action="#" onsubmit="return add()">
-				<input type="checkbox" id="hide"/>
+			<form id="add-movie"><!-- action="#" onsubmit="return add()" -->
+				<input type="checkbox" id="hide" onclick="hid()" />
 				<label for="hide">Hide the List</label>
 				<input type="text" placeholder="Add a movie..."/>
 				<button>Add</button>
