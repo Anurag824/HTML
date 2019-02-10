@@ -1,2 +1,2 @@
 # HTML
-started validating forms using javascript
+making and storing things learnt from Acadview Course
