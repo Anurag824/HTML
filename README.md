@@ -1,2 +1,3 @@
 # HTML
-making and storing things learnt from Acadview Course
+currently studying MERN Stack
+making and storing things learnt
